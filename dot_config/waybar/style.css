@@ -1,0 +1,35 @@
+@import "colors.css";
+
+* {
+  font-family: "Symbols Nerd Font Mono", monospace;
+  font-size: 13px;
+  min-height: 0;
+  border: none;
+  border-radius: 0;
+  color: #c1c1c1;
+}
+
+window#waybar {
+  background: @base00;
+  color: @base05;
+}
+
+#workspaces,
+#connectivity,
+#performance,
+#power,
+#clock {
+  background: @base01;
+  margin: 1px 8px;
+}
+
+#cpu,
+#temperature,
+#memory,
+#disk,
+#network,
+#bluetooth,
+#battery,
+#backlight {
+  margin: 1px 4px;
+}

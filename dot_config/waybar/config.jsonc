@@ -1,0 +1,68 @@
+{
+  "reload_style_on_change": true,
+  "layer": "top",
+  "modules-left": ["ext/workspaces"],
+  "modules-center": ["group/media"],
+  "modules-right": [
+    "group/connectivity",
+    "group/performance",
+    "group/power",
+    "group/utilities"
+  ],
+
+  "dwl/window": {
+    "max-length": 50
+  },
+
+  "group/utilities": {
+    "orientation": "horizontal",
+    "modules": ["clock"]
+  },
+
+  "group/media": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio", "mpd"]
+  },
+
+  "group/performance": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "temperature", "memory", "disk"]
+  },
+
+  "group/connectivity": {
+    "orientation": "horizontal",
+    "modules": ["network", "bluetooth"]
+  },
+
+  "group/power": {
+    "orientation": "horizontal",
+    "modules": ["backlight", "battery"]
+  },
+
+  "network": {
+    "format": "{ifname}",
+    "format-wifi": "{essid} ({signalStrength}%) ",
+    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname} via {gwaddr} 󰊗",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+    "tooltip-format-ethernet": "{ifname} ",
+    "tooltip-format-disconnected": "Disconnected",
+    "max-length": 50
+  },
+
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "{percent}% {icon}",
+    "format-icons": ["", ""]
+  },
+
+  "battery": {
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "clock": {
+    "format": "{:%a, %d %b  %I:%M %p}"
+  }
+}

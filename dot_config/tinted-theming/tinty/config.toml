@@ -1,0 +1,20 @@
+# ~/.config/tinted-theming/tinty/config.toml
+[[items]]
+path = "https://github.com/tinted-theming/base16-waybar"
+name = "base16-waybar"
+themes-dir = "colors"
+hook = "cp -f \"$TINTY_THEME_FILE_PATH\" ~/.config/waybar/colors.css"
+
+[[items]]
+path = "https://github.com/tinted-theming/tinted-terminal"
+name = "tinted-terminal"
+themes-dir = "themes/ghostty"
+# With `theme` set to "tinted-theming", this will be where Ghostty looks for the theme file:
+hook = """
+mkdir -p ~/.config/ghostty/themes
+command cp -f "$TINTY_THEME_FILE_PATH" ~/.config/ghostty/themes/tinted-theming
+killall -SIGUSR2 ghostty 2>/dev/null || true
+"""
+supported-systems = ["base16", "base24"]
+
+
